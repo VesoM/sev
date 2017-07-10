@@ -8,7 +8,6 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    <sev></sev>
 
                     <passport-clients></passport-clients>
                     <passport-authorized-clients></passport-authorized-clients>

@@ -48,7 +48,7 @@ class AssetGroupsTableSeeder extends Seeder
           'created_at' => Carbon::now()),
         array(
           'id' => 3,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
           'name' => 'Micin Ulaz',
           'address' => 'Dr Vukasina Markovica',
           'number' => '50',
