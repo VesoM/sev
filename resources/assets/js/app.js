@@ -29,8 +29,6 @@ window.Vue = require('vue');
      require('./components/passport/PersonalAccessTokens.vue')
  );
 
-Vue.component('sev', require('./components/Sev.vue'));
-
 const app = new Vue({
     el: '#app'
 });
