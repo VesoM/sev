@@ -22,7 +22,7 @@ class CreateAssetownersTable extends Migration
       			$table->string('address2')->nullable();
       			$table->string('email')->nullable();
       			$table->string('telephone')->nullable();
-      			$table->string('status'); // Mozda FK
+      			$table->string('status'); // Aktivan ili ne
       			$table->string('identification_number')->nullable(); // JMBG
       			$table->text('notes')->nullable();
 
