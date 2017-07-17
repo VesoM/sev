@@ -18,8 +18,8 @@ class CreateUserPrivsTable extends Migration
 
       			$table->integer('user_id')->unsigned();
       			$table->integer('user_group_id')->unsigned();
-      			$table->string('privilege'); // Mozda FK
-      			$table->string('status'); // Mozda ne treba
+      			$table->string('privilege'); // RW ili READ-ONLY
+      			$table->string('status'); // Aktivan ili ne
 
             $table->timestamps();
       			$table->foreign('user_id')->references('id')->on('users');
