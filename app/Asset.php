@@ -15,10 +15,15 @@ class Asset extends Model
     'agg_bill_visible',
     'notes'
   ];
-  
+
     public function assetGroup()
     {
       return $this->belongsTo('App\AssetGroup');
+    }
+
+    public function assetType()
+    {
+      return $this->belongsTo('App\AssetType');
     }
 
     public function assetContracts()
