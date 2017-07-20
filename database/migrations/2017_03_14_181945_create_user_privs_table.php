@@ -34,6 +34,6 @@ class CreateUserPrivsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_groups');
+        Schema::dropIfExists('user_privs');
     }
 }
