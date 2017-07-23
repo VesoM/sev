@@ -16,6 +16,16 @@ class UserGroupsTableSeeder extends Seeder
       DB::table('user_groups')->insert(array(
         array(
           'id' => 1,
+          'name' => 'SEV Ulaz 1',
+          'tax_number' => null,
+          'address' => null,
+          'email' => null,
+          'telephone' => null,
+          'status' => 'A',
+          'notes' => null,
+          'created_at' => Carbon::now()),
+        array(
+          'id' => 2,
           'name' => 'ArtGloria',
           'tax_number' => '456',
           'address' => 'Iza delte',
@@ -25,7 +35,7 @@ class UserGroupsTableSeeder extends Seeder
           'notes' => null,
           'created_at' => Carbon::now()),
         array(
-          'id' => 2,
+          'id' => 3,
           'name' => 'Sev Dr Vukasina Markovica',
           'tax_number' => '4561',
           'address' => 'dr Vukasina Markovica 50',

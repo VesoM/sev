@@ -18,7 +18,7 @@ class AssetOwnersTableSeeder extends Seeder
       DB::table('asset_owners')->insert(array(
         array(
           'id' => 1,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
          	'name' => 'Zdravko Ivanovic',
           'address1' => 'doljani bb',
           'address2' => '',
@@ -30,7 +30,7 @@ class AssetOwnersTableSeeder extends Seeder
           'created_at' => Carbon::now()),
         array(
           'id' => 2,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
           'name' => 'Milan Labudovic',
           'address1' => 'Ruske kule 66',
           'address2' => '',
@@ -42,7 +42,7 @@ class AssetOwnersTableSeeder extends Seeder
           'created_at' => Carbon::now()),
         array(
           'id' => 3,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
           'name' => 'Milic Dubak',
           'address1' => 'Tolosi bb',
           'address2' => '',
@@ -54,7 +54,7 @@ class AssetOwnersTableSeeder extends Seeder
           'created_at' => Carbon::now()),
         array(
           'id' => 4,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
           'name' => 'Veselin Man',
           'address1' => 'Rogami 777',
           'address2' => 'Ivana Crnojevica',

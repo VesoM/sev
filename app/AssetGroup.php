@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Scopes\UserGroupScope;
 use Illuminate\Database\Eloquent\Model;
 
 class AssetGroup extends Model
@@ -28,4 +29,17 @@ class AssetGroup extends Model
     {
       return $this->hasMany('App\Asset');
     }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new UserGroupScope);
+    }
+/*
+    public function scopeViewableAGs($query)
+    {
+      return $query->where('user_group_id', Auth::user()->group);
+    }
+*/
 }

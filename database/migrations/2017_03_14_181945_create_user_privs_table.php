@@ -16,9 +16,9 @@ class CreateUserPrivsTable extends Migration
         Schema::create('user_privs', function (Blueprint $table) {
             $table->increments('id');
 
-      			$table->integer('user_id')->unsigned();
-      			$table->integer('user_group_id')->unsigned();
-      			$table->string('privilege'); // RW ili READ-ONLY
+      			$table->integer('user_id')->unsigned()->unique();
+      			$table->integer('user_group_id')->unsigned()->nullable();
+      			$table->string('privilege')->nullable(); // RW ili READ-ONLY
       			$table->string('status'); // Aktivan ili ne
 
             $table->timestamps();
