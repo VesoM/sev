@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserPriv extends Model
 {
-  public function user()
-  {
-    return $this->belongsTo('App\User');
-  }
-  public function userGroup()
+  public function group()
   {
     return $this->belongsTo('App\UserGroup');
   }

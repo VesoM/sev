@@ -92,6 +92,7 @@ return [
 
     'fallback_locale' => 'en',
 
+    'faker_locale' => 'sr_Latn_RS', // dodato da bi factory generisao srpski
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

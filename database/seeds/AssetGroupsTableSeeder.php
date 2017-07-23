@@ -16,7 +16,7 @@ class AssetGroupsTableSeeder extends Seeder
       DB::table('asset_groups')->insert(array(
         array(
           'id' => 1,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
           'name' => 'Brankov Ulaz',
           'address' => 'Stari Aerodrom',
           'number' => '66',
@@ -32,7 +32,7 @@ class AssetGroupsTableSeeder extends Seeder
           'created_at' => Carbon::now()),
         array(
           'id' => 2,
-          'user_group_id'=> 1,
+          'user_group_id'=> 2,
           'name' => 'Vesov Ulaz',
           'address' => 'Mose Pijade',
           'number' => 'bb',
@@ -48,7 +48,7 @@ class AssetGroupsTableSeeder extends Seeder
           'created_at' => Carbon::now()),
         array(
           'id' => 3,
-          'user_group_id'=> 2,
+          'user_group_id'=> 3,
           'name' => 'Micin Ulaz',
           'address' => 'Dr Vukasina Markovica',
           'number' => '50',
