@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Asset extends Model
 {
   protected $fillable = [
+    'asset_group_id',
     'name',
     'size',
     'type',
     'cadastre_number',
-    'status',
     'agg_bill_visible',
     'notes'
   ];

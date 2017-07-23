@@ -23,7 +23,7 @@ class AssetGroup extends Model
   ];
     public function userGroup()
     {
-      return $this->belongsTo('App\userGroup');
+      return $this->belongsTo('App\UserGroup');
     }
     public function assets()
     {
