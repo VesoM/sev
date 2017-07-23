@@ -48,7 +48,7 @@ class AssetGroupController extends Controller
      */
     public function show($id)
     {
-        return response()->json(\App\AssetGroup::with('Assets')->find($id));
+        return response()->json(\App\AssetGroup::with('assets')->find($id));
     }
 
     /**

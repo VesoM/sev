@@ -6,6 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class AssetContract extends Model
 {
+  protected $fillable = [
+    'asset_id',
+    'asset_owner_id',
+    'notes'
+  ];
+
     //
     public function asset()
     {

@@ -3,6 +3,7 @@
 namespace App;
 
 use App\UserPriv;
+use App\UserGroup;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -29,16 +30,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function priv()
+    public function userPriv()
     {
       return $this->hasOne('App\UserPriv');
     }
 
 
-    public function group()
+    public function userGroup()
     {
-      return $this->hasOne('App\UserPriv')->group;
+      //return $this->hasManyThrough(UserGroup::class, UserPriv::class);
+      return $this->userPriv->belongsTo('App\UserGroup');
     }
-
 
 }

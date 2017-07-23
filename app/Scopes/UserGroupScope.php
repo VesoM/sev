@@ -19,7 +19,7 @@ class UserGroupScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         if (Auth::user()!=null){
-          $builder->where('user_group_id', Auth::user()->priv->user_group_id);
+          $builder->where('user_group_id', Auth::user()->userGroup->id);
         }
         else
           $builder->where('user_group_id',-1);
