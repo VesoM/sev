@@ -64,8 +64,6 @@ $factory->define(App\Asset::class, function (Faker\Generator $faker) {
         'name' => 'Stan broj '.$faker->randomNumber($nbDigits = 4, $strict = false),
         'size'  => $faker->randomNumber($nbDigits = 2, $strict = true),
         'cadastre_number' => $faker->randomNumber($nbDigits = 4, $strict = false),
-        'status' => 'A',
-        'agg_bill_visible' => $faker->randomElement($array = array ('Y','N')),
         'notes' => null,
     ];
 });
@@ -77,7 +75,6 @@ $factory->define(App\AssetOwner::class, function (Faker\Generator $faker) {
         'address2' => $faker->address,
         'email' => $faker->unique()->safeEmail,
         'telephone' => $faker->unique()->phoneNumber,
-        'status' => 'A',
         'identification_number' => $faker->randomNumber($nbDigits = 2, $strict = true),
         'notes' => null,
     ];
@@ -87,7 +84,6 @@ $factory->define(App\AssetContract::class, function (Faker\Generator $faker) {
     return [
       'asset_id' => App\AssetGroup::all()->random()->assets->random()->id,
       'asset_owner_id' => App\AssetOwner::all()->random()->id,
-      'status' => 'A',
       'notes' => null,
     ];
 });

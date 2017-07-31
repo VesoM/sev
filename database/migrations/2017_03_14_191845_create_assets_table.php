@@ -21,11 +21,10 @@ class CreateAssetsTable extends Migration
       			$table->string('name');
       			$table->integer('size')->nullable();
       			$table->string('cadastre_number')->nullable(); // Broj pd u listu nepokretnosti
-      			$table->string('status'); // Aktivan ili ne
-      			$table->string('agg_bill_visible'); // Da li se prikazuje na zajednickom obracunu
       			$table->text('notes')->nullable();
 
             $table->timestamps();
+            $table->softdeletes();
       			$table->foreign('asset_group_id')->references('id')->on('asset_groups');
             $table->foreign('asset_type_id')->references('id')->on('asset_types');
         });

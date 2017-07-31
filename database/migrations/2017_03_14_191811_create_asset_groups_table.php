@@ -33,7 +33,7 @@ class CreateAssetgroupsTable extends Migration
       			$table->date('first_bill_date')->nullable()->comment('Datum obracuna je posljednji dan u mjesecu obracuna');
 
             $table->timestamps();
-
+            $table->softdeletes();
       			$table->foreign('user_group_id')->references('id')->on('user_groups');
         });
     }

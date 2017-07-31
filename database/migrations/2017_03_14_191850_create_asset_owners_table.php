@@ -22,11 +22,11 @@ class CreateAssetownersTable extends Migration
       			$table->string('address2')->nullable();
       			$table->string('email')->nullable();
       			$table->string('telephone')->nullable();
-      			$table->string('status'); // Aktivan ili ne
       			$table->string('identification_number')->nullable(); // JMBG
       			$table->text('notes')->nullable();
 
             $table->timestamps();
+            $table->softdeletes();
       			$table->foreign('user_group_id')->references('id')->on('user_groups');
 			});
     }

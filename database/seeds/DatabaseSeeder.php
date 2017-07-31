@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
           factory(App\Asset::class,20)->create(['asset_group_id' => $ag->id]);
         });
         factory(App\AssetContract::class,100)->create()->each(function ($ac){
-          factory(App\AssetAnnex::class,2)->create(['asset_contract_id' => $ac->id]);
+          factory(App\AssetAnnex::class,2)->create(['asset_contract_id' => $ac->id,
+                                                    'asset_size' => $ac->asset->size]);
         });
 
         Auth::logout();

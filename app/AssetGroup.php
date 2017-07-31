@@ -2,11 +2,14 @@
 
 namespace App;
 
+use Auth;
 use App\Scopes\UserGroupScope;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class AssetGroup extends Model
 {
+  use SoftDeletes;
   protected $fillable = [
     'name',   // Ponuditi kao SEV + address + number
     'address',
@@ -21,6 +24,9 @@ class AssetGroup extends Model
     'founding_date',
     'first_bill_date' // Mozda koristiti kod kreiranja prvog obracuna ?
   ];
+
+  protected $dates = ['created_at','updated_at','deleted_at'];
+
     public function userGroup()
     {
       return $this->belongsTo('App\UserGroup');
@@ -35,6 +41,11 @@ class AssetGroup extends Model
         parent::boot();
 
         static::addGlobalScope(new UserGroupScope);
+        //Ovo bi trebalo da ide u Observer
+        static::creating( function ($model)
+        {
+          $model->user_group_id = Auth::user()->userGroup->id;
+        });
     }
 /*
     public function scopeViewableAGs($query)
