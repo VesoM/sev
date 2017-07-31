@@ -24,10 +24,10 @@ class UpdateAssetGroup extends FormRequest
     public function rules()
     {
         return [
-          'name' => 'required|max:255',
-          'address' => 'required|max:255',
-          'number' => 'required|max:255',
-          'municipality'  => 'required|max:255',
+          'name' => 'max:255',
+          'address' => 'max:255',
+          'number' => 'max:255',
+          'municipality'  => 'max:255',
           'bank_account' => 'max:255',
           'tax_number' => 'max:255',
           'superintendent' => 'max:255',

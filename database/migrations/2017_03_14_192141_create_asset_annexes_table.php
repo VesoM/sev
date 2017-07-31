@@ -17,7 +17,8 @@ class CreateAssetAnnexesTable extends Migration
             $table->increments('id');
       			$table->integer('asset_contract_id')->unsigned();
 
-      			$table->integer('unit_price');
+            $table->integer('asset_size')->nullable();
+            $table->integer('unit_price')->nullable();
       			$table->integer('ownership_percentage');
       			$table->integer('amount');
       			$table->date('start_date'); // Mozda null
@@ -25,6 +26,7 @@ class CreateAssetAnnexesTable extends Migration
       			$table->text('notes')->nullable();
 
             $table->timestamps();
+            $table->softdeletes();
       			$table->foreign('asset_contract_id')->references('id')->on('asset_contracts');
 			});
     }

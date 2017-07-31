@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon; // dodao sam ovo da bi now() radio
 
 class AssetTypesTableSeeder extends Seeder
 {
@@ -15,24 +14,19 @@ class AssetTypesTableSeeder extends Seeder
       DB::table('asset_types')->insert(array(
         array(
           'id' => 1,
-         	'name' => 'Stan',
-          'created_at' => Carbon::now()),
+         	'name' => 'Stan'),
         array(
           'id' => 2,
-         	'name' => 'Poslovni prostor',
-          'created_at' => Carbon::now()),
+         	'name' => 'Poslovni prostor'),
         array(
           'id' => 3,
-         	'name' => 'Garaža',
-          'created_at' => Carbon::now()),
+         	'name' => 'Garaža'),
         array(
             'id' => 4,
-           	'name' => 'Renta',
-            'created_at' => Carbon::now()),
+           	'name' => 'Renta'),
           array(
             'id' => 5,
-           	'name' => 'Ostalo',
-            'created_at' => Carbon::now())
+           	'name' => 'Ostalo')
           ));
     }
 }

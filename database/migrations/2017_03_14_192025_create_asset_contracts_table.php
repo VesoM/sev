@@ -18,10 +18,10 @@ class CreateAssetContractsTable extends Migration
       			$table->integer('asset_id')->unsigned();
       			$table->integer('asset_owner_id')->unsigned();
 
-      			$table->string('status');
       			$table->text('notes')->nullable();
 
             $table->timestamps();
+            $table->softdeletes();
       			$table->foreign('asset_id')->references('id')->on('assets');
       			$table->foreign('asset_owner_id')->references('id')->on('asset_owners');
         });

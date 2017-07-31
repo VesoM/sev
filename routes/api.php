@@ -17,4 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::middleware('auth:api')->patch('/AssetGroup/{AssetGroup}/restore','AssetGroupController@restore');
 Route::middleware('auth:api')->resource('/AssetGroup','AssetGroupController');
