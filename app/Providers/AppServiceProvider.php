@@ -2,11 +2,16 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\ServiceProvider;
 use App\User;
+use App\AssetGroup;
+use App\AssetOwner;
+use App\Asset;
 use App\Observers\UserObserver;
 use App\Observers\AssetGroupObserver;
 use App\Observers\AssetOwnerObserver;
-use Illuminate\Support\ServiceProvider;
+use App\Observers\AssetObserver;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -18,8 +23,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         User::observe(UserObserver::class);
-      //  User::observe(AssetGroupObserver::class);
-        User::observe(AssetOwnerObserver::class);
+        AssetGroup::observe(AssetGroupObserver::class);
+        AssetOwner::observe(AssetOwnerObserver::class);
+        Asset::observe(AssetObserver::class);
     }
 
     /**

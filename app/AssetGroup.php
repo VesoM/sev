@@ -41,11 +41,6 @@ class AssetGroup extends Model
         parent::boot();
 
         static::addGlobalScope(new UserGroupScope);
-        //Ovo bi trebalo da ide u Observer
-        static::creating( function ($model)
-        {
-          $model->user_group_id = Auth::user()->userGroup->id;
-        });
     }
 /*
     public function scopeViewableAGs($query)

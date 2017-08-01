@@ -25,6 +25,7 @@ class AssetObserver
      */
     public function deleting(Asset $a)
     {
-    //
+    //Provjeriti da li postoji dug za stan
+    //return false;
     }
 }

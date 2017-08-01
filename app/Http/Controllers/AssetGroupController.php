@@ -16,6 +16,9 @@ class AssetGroupController extends Controller
     public function index(Request $request)
     {
       //return response()->json(\App\AssetGroup::all());
+      if($request->has("onlyTrashed")) {
+        return response()->json(\App\AssetGroup::onlyTrashed()->paginate(10));
+      }
       if($request->has("withTrashed")) {
         return response()->json(\App\AssetGroup::withTrashed()->paginate(10));
       }
@@ -89,10 +92,12 @@ class AssetGroupController extends Controller
     public function destroy($id)
     {
 		      \App\AssetGroup::find($id)->delete();
+          return response()->json(["deleted id"=>$id]);
     }
-    
+
     public function restore($id)
     {
 		      \App\AssetGroup::withTrashed()->find($id)->restore();
+          return response()->json(\App\AssetGroup::find($id));
     }
 }
