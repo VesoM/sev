@@ -9,7 +9,8 @@ class Asset extends Model
 {
   use SoftDeletes;
   protected $fillable = [
-    'asset_group_id',
+    //'asset_group_id',
+    'asset_type_id',
     'name',
     'size',
     'type',

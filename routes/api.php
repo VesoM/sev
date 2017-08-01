@@ -19,4 +19,6 @@ Route::middleware('auth:api')->group(function(){
   });
   Route::patch('/AssetGroup/{AssetGroup}/restore','AssetGroupController@restore');
   Route::resource('/AssetGroup','AssetGroupController');
+  Route::resource('/AssetGroup.Asset','AssetController');
+  Route::resource('/AssetGroup.Asset.AssetContract','AssetContractController');
 });
